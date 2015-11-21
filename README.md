@@ -13,6 +13,15 @@ Grisbi-Client-Web is the client part of [grisbi-server-java](https://github.com/
 - auto-completion of categories
 - auto-completion of parties
 
+
+## Screeshot
+
+Here are some screenshots of the early version :
+
+![Alt text](/screenshots/ss_synthesis.png?raw=true "Home page")
+![Alt text](/screenshots/ss_accout_list.png?raw=true "Accounts list")
+![Alt text](/screenshots/ss_porte_monnaie.png?raw=true "Account page")
+
 ## Roadmap
 Theses features are not implemented yet :
 - save new transaction
