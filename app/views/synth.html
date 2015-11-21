@@ -1,0 +1,27 @@
+<h1>Synthese</h1>
+<table class="table table-condensed">
+  <tr>
+    <th colspan="3" class="text-left"> Solde des comptes en euros</th>
+  </tr>
+  <tr ng-repeat="account in synthesis.accounts">
+    <td>{{account.name}}</td>
+    <td>{{account.soldePointe | number:2}} €</td>
+    <td>{{account.solde | number:2}} €</td>
+  </tr>
+  <tr>
+    <th colspan="3" class="text-left"> Solde des comptes de passif en euros</th>
+  </tr>
+  <tr ng-repeat="account in synthesis.accountPassives">
+    <td>{{account.name}}</td>
+    <td>{{account.soldePointe | number:2}} €</td>
+    <td>{{account.solde | number:2}} €</td>
+  </tr>
+  <tr>
+    <th colspan="3" class="text-left"> Solde des comptes de actifs en euros</th>
+  </tr>
+  <tr ng-repeat="account in synthesis.accountActives">
+    <td>{{account.name}}</td>
+    <td>{{account.soldePointe | number:2}} €</td>
+    <td>{{account.solde | number:2}} €</td>
+  </tr>
+</table>

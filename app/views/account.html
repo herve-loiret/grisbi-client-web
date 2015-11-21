@@ -1,0 +1,60 @@
+<h1>Compte : {{accountName}}</h1>
+<table id="transactionsTable" ng-table="tableParams" class="table table-bordered table-condensed">
+  <thead>
+    <tr>
+      <th>Date</th>
+        <th>Tiers</th>
+        <th>Categorie</th>
+        <th>P/R</th>
+        <th>Debit</th>
+        <th>Credit</th>
+        <th>Solde</th>
+        <th>Actions</th>
+    </tr>
+  </thead>
+    <tr ng-repeat-start="transaction in transactions">
+      <td>{{transaction.dateUI}}</td>
+        <td>{{transaction.tiers}}</td>
+        <td>{{transaction.category}}</td>
+        <td>{{transaction.pr}}</td>
+        <td><div ng-if="transaction.debit">{{transaction.debit | number:2}} €</div></td>
+        <td><div ng-if="transaction.credit">{{transaction.credit | number:2}} €</div></td>
+        <td>{{transaction.solde | number:2}} €</td>
+        <td>
+          <div ng-hide="!transaction.subTransactions.length">
+            <button ng-if="transaction.expanded" ng-click="toggleDetail($index)">-</button>
+              <button ng-if="!transaction.expanded" ng-click="toggleDetail($index)">+</button>
+          </div>
+        </td>
+    </tr>
+    <tr ng-show="activePosition == $parent.$index"  ng-repeat="transaction in transaction.subTransactions" ng-repeat-end="">
+      <td></td>
+        <td colspan="3">{{transaction.category}}</td>
+        <td>
+          <div ng-if="transaction.debit">{{transaction.debit | number:2}} €</div>
+        </td>
+        <td>
+          <div ng-if="transaction.credit">{{transaction.credit | number:2}} €</div>
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+      <td colspan="7" class="text-right">Solde pointé : TODO</td>
+    </tr>
+  <tr>
+    <td>
+<!-- 					<input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" /> -->
+<!-- 	              	<span class="input-group-btn"> -->
+<!-- 	                	<button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button> -->
+<!-- 	              	</span> -->
+</td>
+    <td><input type="text" ng-model="selected" typeahead="party as party.name for party in parties | filter:$viewValue | limitTo:8" class="form-control"></td>
+    <td><input type="text" ng-model="selected" typeahead="categoryui for categoryui in categoriesui | filter:$viewValue | limitTo:20" class="form-control"></td>
+    <td></td>
+    <td><input type="text" format="number" /></td>
+    <td><input type="text" format="number" /></td>
+    <td></td>
+    <td><input type="submit" value="Ajouter" class="btn btn-default"/></td>
+  </tr>
+</table>
