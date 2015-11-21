@@ -18,9 +18,9 @@ Grisbi-Client-Web is the client part of [grisbi-server-java](https://github.com/
 
 Here are some screenshots of the early version :
 
-![Alt text](/screenshots/ss_synthesis.png?raw=true "Home page")
-![Alt text](/screenshots/ss_accout_list.png?raw=true "Accounts list")
-![Alt text](/screenshots/ss_porte_monnaie.png?raw=true "Account page")
+![screenshot home page](https://github.com/herve-loiret/grisbi-client-web/blob/master/screenshot/ss_synthesis.png?raw=true "Home page")
+![screenshot accounts](https://github.com/herve-loiret/grisbi-client-web/blob/master/screenshot/ss_accout_list.png?raw=true "Accounts list")
+![screenshot account page](https://github.com/herve-loiret/grisbi-client-web/blob/master/screenshot/ss_porte_monnaie.png?raw=true "Account page")
 
 ## Roadmap
 Theses features are not implemented yet :
