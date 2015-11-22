@@ -10,22 +10,30 @@ angular.module('grisbiClientWebApp').controller('accountController', function (C
 	});
 
 	// load parties
-	Party.fetch().success(function(data) {
-		$scope.parties = data;
+	Party.fetch().then(function(response) {
+		$scope.parties = response.data;
 	});
 
 	// load categories
 	// permet l'autocompletion pendant la saisie d'une categorie
-	Category.fetch().success(function(data) {
-		$scope.categoriesui = data;
+	Category.fetch().then(function(response) {
+		$scope.categoriesui = response.data;
 	});
 
 
 	$scope.toggleDetail = function($index) {
-        $scope.activePosition = $scope.activePosition == $index ? -1 : $index;
+  	$scope.activePosition = $scope.activePosition == $index ? -1 : $index;
   };
 
 
-	// date
-	$scope.format = 'dd.MM.yyyy';
+
+	// gestion du datepicker :
+	$scope.open = function($event) {
+    $scope.status.opened = true;
+  };
+	$scope.status = {
+    opened: false
+  };
+	$scope.format = 'dd/MM/yyyy';
+
 });

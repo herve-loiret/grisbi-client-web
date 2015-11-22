@@ -1,9 +1,7 @@
 angular.module('grisbiClientWebApp').controller('headerController', function (Account, $scope) {
 
-  Account.fetch().success(function(data) {
-    $scope.accounts = data;
-  }).error(function(data, status, headers, config) {
-    console.log('connection : %j', config);
+  Account.fetch().then(function(response) {
+    $scope.accounts = response.data;
   });
 
 });
