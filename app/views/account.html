@@ -14,12 +14,12 @@
   </thead>
     <tr ng-repeat-start="transaction in transactions">
       <td>{{transaction.dateUI}}</td>
-        <td>{{transaction.tiers}}</td>
+        <td>{{transaction.party}}</td>
         <td>{{transaction.category}}</td>
         <td>{{transaction.pr}}</td>
-        <td><div ng-if="transaction.debit">{{transaction.debit | number:2}} €</div></td>
-        <td><div ng-if="transaction.credit">{{transaction.credit | number:2}} €</div></td>
-        <td>{{transaction.solde | number:2}} €</td>
+        <td><div ng-if="transaction.debit">{{transaction.debit | number:2}}&#8239;€</div></td>
+        <td><div ng-if="transaction.credit">{{transaction.credit | number:2}}&#8239;€</div></td>
+        <td>{{transaction.solde | number:2}}&#8239;€</td>
         <td>
           <div ng-hide="!transaction.subTransactions.length">
             <button ng-if="transaction.expanded" ng-click="toggleDetail($index)">-</button>
@@ -31,10 +31,10 @@
       <td></td>
         <td colspan="3">{{transaction.category}}</td>
         <td>
-          <div ng-if="transaction.debit">{{transaction.debit | number:2}} €</div>
+          <div ng-if="transaction.debit">{{transaction.debit | number:2}}&#8239;€</div>
         </td>
         <td>
-          <div ng-if="transaction.credit">{{transaction.credit | number:2}} €</div>
+          <div ng-if="transaction.credit">{{transaction.credit | number:2}}&#8239;€</div>
         </td>
         <td></td>
         <td></td>
@@ -46,11 +46,11 @@
     <td>
       <input type="text" ng-click="open($event)" placeholder="{{format}}" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
     </td>
-    <td><input type="text" ng-model="party" typeahead="party as party.name for party in parties | filter:$viewValue | limitTo:20" class="form-control"></td>
-    <td><input type="text" ng-model="category" typeahead="categoryui for categoryui in categoriesui | filter:$viewValue | limitTo:20" class="form-control"></td>
+    <td><input type="text" placeholder="Tiers" ng-model="party" typeahead="party as party.name for party in parties | filter:$viewValue | limitTo:20" class="form-control"></td>
+    <td><input type="text" placeholder="Categorie" ng-model="category" typeahead="categoryui for categoryui in categoriesui | filter:$viewValue | limitTo:20" class="form-control"></td>
     <td></td>
-    <td><input type="text" format="number" /></td>
-    <td><input type="text" format="number" /></td>
+    <td><input type="text" class="form-control" format="number" placeholder="Débit" /></td>
+    <td><input type="text" class="form-control" format="number" placeholder="Crédit" /></td>
     <td></td>
     <td><input type="submit" value="Ajouter" class="btn btn-default"/></td>
   </tr>
