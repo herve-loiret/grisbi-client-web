@@ -10,11 +10,21 @@ angular.module('grisbiClientWebApp').provider("Account", function() {
 
   _this.$get = ['$http', function($http) {
     return {
-      fetch    : fetch
+      fetch                        : fetch,
+      getBalanceByAccountId        : getBalanceByAccountId,
+      getBalancePointedByAccountId : getBalancePointedByAccountId
     };
 
     function fetch() {
       return $http.get(API_URI);
+    }
+
+    function getBalanceByAccountId(accountId) {
+      return $http.get(API_URI + '/' + accountId + '/balance');
+    }
+
+    function getBalancePointedByAccountId(accountId) {
+      return $http.get(API_URI + '/' + accountId + '/balance/pointed');
     }
 
   }];
