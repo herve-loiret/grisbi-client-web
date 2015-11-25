@@ -18,7 +18,7 @@ angular
     'ngTouch',
     'ui.bootstrap'
   ])
-  .config(function ($routeProvider, AccountProvider, TransactionProvider, PartyProvider, SynthesisProvider, CategoryProvider) {
+  .config(function ($routeProvider, AccountProvider, TransactionProvider, PartyProvider, CategoryProvider) {
     $routeProvider
       .when('/synth', {
             templateUrl: 'views/synth.html',
@@ -36,6 +36,5 @@ angular
     AccountProvider.setURI(URI);
     TransactionProvider.setURI(URI);
     PartyProvider.setURI(URI);
-    SynthesisProvider.setURI(URI);
     CategoryProvider.setURI(URI);
   });

@@ -12,7 +12,7 @@ angular.module('grisbiClientWebApp').provider("Account", function() {
     return {
       fetch                        : fetch,
       getBalanceByAccountId        : getBalanceByAccountId,
-      getBalancePointedByAccountId : getBalancePointedByAccountId
+      getBalanceReconciledByAccountId : getBalanceReconciledByAccountId
     };
 
     function fetch() {
@@ -23,8 +23,8 @@ angular.module('grisbiClientWebApp').provider("Account", function() {
       return $http.get(API_URI + '/' + accountId + '/balance');
     }
 
-    function getBalancePointedByAccountId(accountId) {
-      return $http.get(API_URI + '/' + accountId + '/balance/pointed');
+    function getBalanceReconciledByAccountId(accountId) {
+      return $http.get(API_URI + '/' + accountId + '/balance/reconciled');
     }
 
   }];
