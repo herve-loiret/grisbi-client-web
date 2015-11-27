@@ -31,7 +31,24 @@ Theses features are not implemented yet :
 
 ## Build & development
 
-Run `grunt` for building and `grunt serve` for preview.
+### Prerequies 
+
+Install Nodejs : https://nodejs.org/en/
+
+Install grunt-cli :
+`sudo npm install -g grunt-cli`
+Install bower : 
+`npm install -g bower`
+
+### Install dependencies 
+
+`npm install`
+
+`npm install phantomjs`
+
+`bower install`
+
+`grunt serve` 
 
 ## Testing
 
