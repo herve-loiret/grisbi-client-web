@@ -1,7 +1,7 @@
-angular.module('grisbiClientWebApp').controller('headerController', function (Account, $scope) {
+angular.module('grisbiClientWebApp').controller('headerController', function(Account, $scope) {
 
-  Account.fetch().then(function(response) {
-    $scope.accounts = response.data;
-  });
+    Account.fetch().then(function(response) {
+	$scope.accounts = response.data;
+    });
 
 });

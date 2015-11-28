@@ -37,4 +37,4 @@ angular
     TransactionProvider.setURI(URI);
     PartyProvider.setURI(URI);
     CategoryProvider.setURI(URI);
-  });
+});
