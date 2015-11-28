@@ -32,7 +32,7 @@ angular
             redirectTo: '/synth'
         });
 
-    var URI = 'http://localhost:8080/GrisbiWebServer/rest/grisbiws/';
+    var URI = 'http://localhost:8080/grisbi-server-java/rest/grisbiws/';
     AccountProvider.setURI(URI);
     TransactionProvider.setURI(URI);
     PartyProvider.setURI(URI);
