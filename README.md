@@ -44,8 +44,6 @@ Install bower :
 
 `npm install`
 
-`npm install phantomjs`
-
 `bower install`
 
 `grunt serve` 
