@@ -2,8 +2,6 @@ var defaultLoadAccount = 4;
 
 angular.module('grisbiClientWebApp').controller('accountController', function(Category, Party, Transaction, $scope, $routeParams) {
 
-    console.log("account controller | params : ", $routeParams);
-
     Transaction.fetch($routeParams.id).success(function(data) {
 	$scope.transactions = data;
 	$scope.accountName = $routeParams.name;
@@ -24,6 +22,11 @@ angular.module('grisbiClientWebApp').controller('accountController', function(Ca
     $scope.toggleDetail = function($index) {
 	$scope.activePosition = $scope.activePosition == $index ? -1 : $index;
     };
+
+    // creation d'une transaction :
+    $scope.createTransaction = function(newTransaction) {
+	Transaction.create(newTransaction);
+    }
 
     // gestion du datepicker :
     $scope.open = function($event) {

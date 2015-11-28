@@ -44,14 +44,14 @@
     </tr>
   <tr>
     <td>
-      <input type="text" ng-click="open($event)" placeholder="{{format}}" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+      <input type="text" ng-model="newTransaction.date" ng-click="open($event)" placeholder="{{format}}" class="form-control" uib-datepicker-popup="{{format}}" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
     </td>
-    <td><input type="text" placeholder="Tiers" ng-model="party" typeahead="party as party.name for party in parties | filter:$viewValue | limitTo:20" class="form-control"></td>
-    <td><input type="text" placeholder="Categorie" ng-model="category" typeahead="categoryui for categoryui in categoriesui | filter:$viewValue | limitTo:20" class="form-control"></td>
+    <td><input type="text" placeholder="Party" ng-model="newTransaction.party" typeahead="party as party.name for party in parties | filter:$viewValue | limitTo:20" class="form-control"></td>
+    <td><input type="text" placeholder="Category" ng-model="newTransaction.category" typeahead="categoryui for categoryui in categoriesui | filter:$viewValue | limitTo:20" class="form-control"></td>
     <td></td>
-    <td><input type="text" class="form-control" format="number" placeholder="Débit" /></td>
-    <td><input type="text" class="form-control" format="number" placeholder="Crédit" /></td>
+    <td><input type="text" ng-model="newTransaction.debit" class="form-control" format="number" placeholder="Debit" /></td>
+    <td><input type="text" ng-model="newTransaction.credit" class="form-control" format="number" placeholder="Credit" /></td>
     <td></td>
-    <td><input type="submit" value="Ajouter" class="btn btn-default"/></td>
+    <td><input type="submit" ng-click="createTransaction(newTransaction)" value="Add" class="btn btn-default"/></td>
   </tr>
 </table>

@@ -4,16 +4,21 @@ angular.module('grisbiClientWebApp').provider("Transaction", function() {
     var _this = this, API_URI = '';
 
     _this.setURI = function(URI) {
-	API_URI = URI + 'transactions/';
+	API_URI = URI + 'transactions';
     };
 
     _this.$get = [ '$http', function($http) {
 	return {
-	    fetch : fetch
+	    fetch	: fetch,
+	    create   	: create
 	};
 
 	function fetch(idAccount) {
-	    return $http.get(API_URI + idAccount);
+	    return $http.get(API_URI + '/' + idAccount);
+	}
+
+	function create(transaction) {
+	    return $http.post(API_URI, transaction);
 	}
 
     } ];
