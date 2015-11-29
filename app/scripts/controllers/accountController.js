@@ -10,12 +10,14 @@ angular.module('grisbiClientWebApp').controller('accountController', function(Ca
     // load parties
     Party.fetch().then(function(response) {
 	$scope.parties = response.data;
+	$scope.selectedParty= $scope.parties[0];
     });
 
     // load categories
     // permet l'autocompletion pendant la saisie d'une categorie
     Category.fetch().then(function(response) {
-	$scope.categoriesui = response.data;
+	$scope.categories = response.data;
+	$scope.selectedCategory= $scope.categories[0];
     });
 
     // permet l'affichage des opérations ventilées
@@ -28,6 +30,11 @@ angular.module('grisbiClientWebApp').controller('accountController', function(Ca
 	Transaction.create(newTransaction);
     }
 
+    
+
+    
+    
+    
     // gestion du datepicker :
     $scope.open = function($event) {
 	$scope.status.opened = true;

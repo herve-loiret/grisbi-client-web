@@ -5,17 +5,11 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="bower_components/datatables/media/css/jquery.dataTables.css" />
     <link rel="stylesheet" href="bower_components/ng-table/dist/ng-table.min.css" />
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="bower_components/ui-select/dist/select.css" />
     <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
   </head>
   <body ng-app="grisbiClientWebApp">
     <!--[if lte IE 8]>
@@ -66,8 +60,6 @@
     </div>
 
 
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
@@ -80,23 +72,20 @@
     <script src="bower_components/datatables/media/js/jquery.dataTables.js"></script>
     <script src="bower_components/ng-table/dist/ng-table.min.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
+    <script src="bower_components/ui-select/dist/select.js"></script>
 
     <script src="http://code.angularjs.org/1.0.8/i18n/angular-locale_fr-fr.js"></script>
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script type="text/javascript" src="scripts/app.js"></script>
-        <script type="text/javascript" src="scripts/controllers/accountController.js"></script>
-        <script type="text/javascript" src="scripts/controllers/synthController.js"></script>
-        <script type="text/javascript" src="scripts/controllers/headerController.js"></script>
+    <script type="text/javascript" src="scripts/app.js"></script>
+    <script type="text/javascript" src="scripts/controllers/accountController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/synthController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/headerController.js"></script>
 
-        <script type="text/javascript" src="scripts/filters/filters.js"></script>
+    <script type="text/javascript" src="scripts/filters/filters.js"></script>
 
-        <script type="text/javascript" src="scripts/services/accountService.js"></script>
-        <script type="text/javascript" src="scripts/services/transactionService.js"></script>
-        <script type="text/javascript" src="scripts/services/partyService.js"></script>
-        <script type="text/javascript" src="scripts/services/categoryService.js"></script>
-        <!-- endbuild -->
+    <script type="text/javascript" src="scripts/services/accountService.js"></script>
+    <script type="text/javascript" src="scripts/services/transactionService.js"></script>
+    <script type="text/javascript" src="scripts/services/partyService.js"></script>
+    <script type="text/javascript" src="scripts/services/categoryService.js"></script>
 </body>
 </html>

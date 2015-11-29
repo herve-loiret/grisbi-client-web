@@ -16,8 +16,10 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'ui.select'
   ])
+
   .config(function ($routeProvider, AccountProvider, TransactionProvider, PartyProvider, CategoryProvider) {
     $routeProvider
       .when('/synth', {
