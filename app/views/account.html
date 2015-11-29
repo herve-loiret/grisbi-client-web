@@ -59,10 +59,10 @@
     <td>
     	<ui-select ng-model="selectedCategory" theme="bootstrap">
 	   	   	<ui-select-match>
-	        	<span ng-bind="$select.selected"></span>
+	        	<span ng-bind="$select.selected.completeName"></span>
 		    </ui-select-match>
-		    <ui-select-choices repeat="item in (categories | filter: $select.search) track by item">
-		        <span ng-bind="item"></span>
+		    <ui-select-choices repeat="item in (categories | filter: $select.search) track by item.completeId">
+		        <span ng-bind="item.completeName"></span>
 		    </ui-select-choices>
 		</ui-select>
    	</td>
