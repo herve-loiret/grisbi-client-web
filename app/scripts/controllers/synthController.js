@@ -1,4 +1,4 @@
-angular.module('grisbiClientWebApp').controller('synthController', function(Account, $scope, $http, $location) {
+angular.module('grisbiClientWebApp').controller('synthController', function(Currency, Account, $scope, $http, $location) {
 
     // on récupère tous les comptes :
     Account.fetch().then(function(response) {
@@ -20,7 +20,13 @@ angular.module('grisbiClientWebApp').controller('synthController', function(Acco
 	    Account.getBalanceReconciledByAccountId(account.id).then(calculateBalanceReconcilied(account));
 	}
     });
+    
 
+    // use currency to dynamicaly display account currency
+    Currency.fetch().then(function(response) {
+	$scope.currencies = response.data;
+    });
+    
     var calculateBalance = function(account) {
 	return function(response) {
 	    account.balance = response.data;

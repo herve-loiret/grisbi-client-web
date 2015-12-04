@@ -18,9 +18,9 @@ angular
     'ngTouch',
     'ui.bootstrap',
     'ui.select'
-  ])
+  ]);
 
-  .config(function ($routeProvider, AccountProvider, TransactionProvider, PartyProvider, CategoryProvider) {
+angular.module('grisbiClientWebApp').config(function ($routeProvider) {
     $routeProvider
       .when('/synth', {
             templateUrl: 'views/synth.html',
@@ -34,9 +34,15 @@ angular
             redirectTo: '/synth'
         });
 
-    var URI = 'http://localhost:8080/grisbi-server-java/rest/grisbiws/';
-    AccountProvider.setURI(URI);
-    TransactionProvider.setURI(URI);
-    PartyProvider.setURI(URI);
-    CategoryProvider.setURI(URI);
+});
+
+
+angular.module('grisbiClientWebApp').config(function (AccountProvider, TransactionProvider, PartyProvider, CategoryProvider, CurrencyProvider) {
+
+  var URI = 'http://localhost:8080/grisbi-server-java/rest/grisbiws/';
+  AccountProvider.setURI(URI);
+  TransactionProvider.setURI(URI);
+  PartyProvider.setURI(URI);
+  CategoryProvider.setURI(URI);
+  CurrencyProvider.setURI(URI);
 });
