@@ -55,7 +55,7 @@
       	close-text="Fermer" />
     </td>
     <td>
-		<ui-select ng-model="selectedParty" theme="bootstrap">
+		<ui-select ng-model="newTransaction.party" theme="bootstrap">
 	   	   	<ui-select-match>
 	        	<span ng-bind="$select.selected.name"></span>
 		    </ui-select-match>
@@ -65,7 +65,7 @@
 		</ui-select>
     </td>
     <td>
-    	<ui-select ng-model="selectedCategory" theme="bootstrap">
+    	<ui-select ng-model="newTransaction.category" theme="bootstrap">
 	   	   	<ui-select-match>
 	        	<span ng-bind="$select.selected.completeName"></span>
 		    </ui-select-match>
