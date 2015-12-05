@@ -25,7 +25,6 @@ Here are some screenshots of the early version :
 
 ## Roadmap
 Theses features are not implemented yet :
-- save new transaction
 - make an authentication system
 - manage categories
 - manages parties
