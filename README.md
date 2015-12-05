@@ -9,9 +9,10 @@ Grisbi-Client-Web is the client part of [grisbi-server-java](https://github.com/
 - display the synthesis page
 - list all accounts
 - display all transactions of an account
+- creating a transaction
 - display all sub-transaction of an account
-- auto-completion of categories
-- auto-completion of parties
+- auto-completion on categories
+- auto-completion on parties
 
 
 ## Screeshot
