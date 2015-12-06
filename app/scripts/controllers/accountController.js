@@ -25,7 +25,13 @@ angular.module('grisbiClientWebApp').controller('accountController', function($f
 
     // permet l'affichage des opérations ventilées
     $scope.toggleDetail = function($index) {
-	$scope.activePosition = $scope.activePosition == $index ? -1 : $index;
+	if($scope.activePosition == $index){
+	    $scope.activePosition = -1;
+	    $scope.transactions[$index].expanded = false;
+	}else{
+	    $scope.activePosition = $index;
+	    $scope.transactions[$index].expanded = true;
+	}
     };
 
     // creation d'une transaction :

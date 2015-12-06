@@ -12,19 +12,25 @@
       <th>Actions</th>
     </tr>
   </thead>
-    <tr ng-repeat-start="transaction in transactions">
-      <td>{{transaction.dateUI}}</td>
+    <tr ng-repeat-start="transaction in transactions" ng-click="toggleDetail($index)">
+      		
+      	<td>
+      		<span ng-hide="!transaction.subTransactions.length">
+	      		<span ng-if="!transaction.expanded" ng-click="toggleDetail($index)" class="glyphicon glyphicon-triangle-right"></span>
+	      		<span ng-if="transaction.expanded" ng-click="toggleDetail($index)" class="glyphicon glyphicon-triangle-bottom"></span>
+	      	</span>
+      		{{transaction.dateUI}}
+      	</td>
         <td>{{transaction.party}}</td>
-        <td>{{transaction.category}}</td>
+        <td>
+        	{{transaction.category}}
+        </td>
         <td>{{transaction.pr}}</td>
         <td><div ng-if="transaction.debit">{{transaction.debit | number:2}}&#8239;€</div></td>
         <td><div ng-if="transaction.credit">{{transaction.credit | number:2}}&#8239;€</div></td>
         <td>{{transaction.solde | number:2}}&#8239;€</td>
         <td>
-          <div ng-hide="!transaction.subTransactions.length">
-            <button ng-if="transaction.expanded" ng-click="toggleDetail($index)">-</button>
-              <button ng-if="!transaction.expanded" ng-click="toggleDetail($index)">+</button>
-          </div>
+          
         </td>
     </tr>
     <tr ng-show="activePosition == $parent.$index"  ng-repeat="transaction in transaction.subTransactions" ng-repeat-end="">
