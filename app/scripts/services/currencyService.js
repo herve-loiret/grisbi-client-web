@@ -13,7 +13,7 @@ angular.module('grisbiClientWebApp').provider("Currency", function() {
 	};
 
 	function fetch() {
-	    return $http.get(API_URI);
+	    return $http({cache: true, url: API_URI, method: 'GET'});
 	}
 
     } ];

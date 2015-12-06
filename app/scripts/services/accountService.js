@@ -15,7 +15,7 @@ angular.module('grisbiClientWebApp').provider("Account", function() {
 	};
 
 	function fetch() {
-	    return $http.get(API_URI);
+	    return $http({cache: true, url: API_URI, method: 'GET'});
 	}
 
 	function getBalanceByAccountId(accountId) {
