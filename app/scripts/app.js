@@ -39,7 +39,7 @@ angular.module('grisbiClientWebApp').config(function ($routeProvider) {
 
 angular.module('grisbiClientWebApp').config(function (AccountProvider, TransactionProvider, PartyProvider, CategoryProvider, CurrencyProvider) {
 
-  var URI = 'http://localhost:8080/grisbi-server-java/rest/grisbiws/';
+  var URI = 'http://localhost:8080/grisbi-server-java/rest/';
   AccountProvider.setURI(URI);
   TransactionProvider.setURI(URI);
   PartyProvider.setURI(URI);

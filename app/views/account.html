@@ -13,7 +13,8 @@
     </tr>
   </thead>
     <tr ng-repeat-start="transaction in transactions" ng-click="toggleDetail($index)">
-      		
+      	
+      	<!-- TODO : faire en sorte que la flêche soit cliquable, et aligner le reste -->
       	<td>
       		<span ng-hide="!transaction.subTransactions.length">
 	      		<span ng-if="!transaction.expanded" ng-click="toggleDetail($index)" class="glyphicon glyphicon-triangle-right"></span>
