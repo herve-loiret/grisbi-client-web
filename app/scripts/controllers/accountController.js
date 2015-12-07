@@ -6,7 +6,7 @@ angular.module('grisbiClientWebApp').controller('accountController', function($f
     $scope.newTransaction = {};
     
     Transaction.fetch($routeParams.id).success(function(data) {
-	$scope.transactions = data;
+	$scope.transactions = data.transactionsResponse;
 	$scope.accountName = $routeParams.name;
     });
 
