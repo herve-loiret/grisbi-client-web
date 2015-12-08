@@ -36,9 +36,17 @@ angular.module('grisbiClientWebApp').controller('accountController', function($f
 
     // creation d'une transaction :
     $scope.createTransaction = function(newTransaction) {
-	newTransaction.date = $filter('date')(newTransaction.date, "dd/MM/yyyy"); 
-	newTransaction.accountId = $routeParams.id;
-	Transaction.create(newTransaction);
+
+	//TODO change the temp information method... 
+	var transaction = {};
+	transaction.date = $filter('date')(newTransaction.date, "dd/MM/yyyy"); 
+	transaction.accountId = $routeParams.id;
+	transaction.categoryId = newTransaction.category.idCategory;
+	transaction.subCategoryId = newTransaction.category.idSubCategory;
+	transaction.debit = newTransaction.debit;
+	transaction.credit = newTransaction.credit;
+	
+	Transaction.create(transaction);
     }
 
     // gestion de la pagination
