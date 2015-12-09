@@ -31,7 +31,7 @@
     "karma-jasmine": "*",
     "karma-phantomjs-launcher": "*",
     "phantomjs": "*",
-    "karma": "*"
+    "karma": "*",
     "jasmine-core": "*",
     "time-grunt": "^1.0.0"
   },
