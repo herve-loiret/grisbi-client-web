@@ -9,12 +9,12 @@ angular.module('grisbiClientWebApp').provider("Transaction", function() {
 
     _this.$get = [ '$http', function($http) {
 	return {
-	    fetch	: fetch,
-	    create   	: create
+	    fetchPaginate	: fetchPaginate,
+	    create   		: create
 	};
 
-	function fetch(idAccount) {
-	    return $http.get(API_URI + '/' + idAccount);
+	function fetchPaginate(idAccount, page, perPage){
+		return $http.get(API_URI + '/' + idAccount + '/page/' + page + '/perpage/' + perPage);
 	}
 
 	function create(transaction) {

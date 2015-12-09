@@ -5,9 +5,15 @@ angular.module('grisbiClientWebApp').controller('accountController', function($f
     // store create transaction informations
     $scope.newTransaction = {};
     
-    Transaction.fetch($routeParams.id).success(function(data) {
-	$scope.transactions = data.transactionsResponse;
-	$scope.accountName = $routeParams.name;
+    $scope.totalItems = 999;
+    $scope.maxSize = 10;
+    $scope.currentPage = 1;
+    $scope.itemsPerPage = 10;
+    
+    Transaction.fetchPaginate($routeParams.id, $scope.currentPage, $scope.itemsPerPage).success(function(data) {
+		$scope.transactions = data.transactionsResponse;
+		$scope.accountName = $routeParams.name;
+		$scope.totalItems = data.totalItem;
     });
 
     // load parties
@@ -19,8 +25,8 @@ angular.module('grisbiClientWebApp').controller('accountController', function($f
     // load categories
     // permet l'autocompletion pendant la saisie d'une categorie
     Category.fetch().then(function(response) {
-	$scope.categories = response.data;
-	$scope.newTransaction.category= $scope.categories[0];
+		$scope.categories = response.data;
+		$scope.newTransaction.category= $scope.categories[0];
     });
 
     // permet l'affichage des opérations ventilées
@@ -54,20 +60,20 @@ angular.module('grisbiClientWebApp').controller('accountController', function($f
       $scope.currentPage = pageNo;
     };
     $scope.pageChanged = function() {
-      console.log('Page changed to: ' + $scope.currentPage);
+    	Transaction.fetchPaginate($routeParams.id, $scope.currentPage, $scope.itemsPerPage).success(function(data) {
+    		$scope.transactions = data.transactionsResponse;
+    		$scope.accountName = $routeParams.name;
+    		$scope.totalItems = data.totalItem;
+        });
     };
     
-    $scope.maxSize = 10;
-    $scope.totalItems = 50;
-    $scope.currentPage = 3;
-    $scope.itemsPerPage = 5;
     
     // gestion du datepicker :
     $scope.open = function($event) {
-	$scope.status.opened = true;
+    	$scope.status.opened = true;
     };
     $scope.status = {
-	opened : false
+    		opened : false
     };
     $scope.format = 'dd/MM/yyyy';
 
