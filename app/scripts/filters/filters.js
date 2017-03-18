@@ -5,7 +5,7 @@ angular.module('grisbiClientWebApp').filter('accountByType', function() {
 
 	angular.forEach(accounts, function(account) {
 	    angular.forEach(types, function(type) {
-		if (type === account.typeAccount) {
+		if (type === account.accountType) {
 		    out.push(account);
 		}
 	    });

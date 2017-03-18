@@ -15,7 +15,7 @@ Grisbi-Client-Web is the client part of [grisbi-server-java](https://github.com/
 - auto-completion on parties
 
 
-## Screeshot
+## Screenshot
 
 Here are some screenshots of the early version :
 

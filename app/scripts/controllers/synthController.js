@@ -13,7 +13,7 @@ angular.module('grisbiClientWebApp').controller('synthController', function(Curr
 	// pour tous les comptes, on lance un traitement
 	for (var i = 0; i < $scope.accounts.length; i++) {
 	    var account = $scope.accounts[i];
-	    var typeAccount = account.typeAccount.toUpperCase();
+	    var accountType = account.accountType.toUpperCase();
 
 	    // get balances and total balances
 	    Account.getBalanceByAccountId(account.id).then(calculateBalance(account));
@@ -30,12 +30,12 @@ angular.module('grisbiClientWebApp').controller('synthController', function(Curr
     var calculateBalance = function(account) {
 	return function(response) {
 	    account.balance = response.data;
-	    var typeAccount = account.typeAccount.toUpperCase();
-	    if (typeAccount === 'BANK' || typeAccount === 'CASH') {
+	    var accountType = account.accountType.toUpperCase();
+	    if (accountType === 'BANK' || accountType === 'CASH') {
 		$scope.globalBalance += account.balance;
-	    } else if (account.typeAccount.toUpperCase() === 'LIABILITY') {
+	    } else if (account.accountType.toUpperCase() === 'LIABILITY') {
 		$scope.globalBalanceLiability += account.balance;
-	    } else if (account.typeAccount.toUpperCase() === 'ASSET') {
+	    } else if (account.accountType.toUpperCase() === 'ASSET') {
 		$scope.globalBalanceAsset += account.balance;
 	    }
 	};
@@ -44,12 +44,12 @@ angular.module('grisbiClientWebApp').controller('synthController', function(Curr
     var calculateBalanceReconcilied = function(account) {
 	return function(response) {
 	    account.balanceReconciled = response.data;
-	    var typeAccount = account.typeAccount.toUpperCase();
-	    if (typeAccount === 'BANK' || typeAccount === 'CASH') {
+	    var accountType = account.accountType.toUpperCase();
+	    if (accountType === 'BANK' || accountType === 'CASH') {
 		$scope.globalBalanceReconciled += account.balanceReconciled;
-	    } else if (account.typeAccount.toUpperCase() === 'LIABILITY') {
+	    } else if (account.accountType.toUpperCase() === 'LIABILITY') {
 		$scope.globalBalanceLiabilityReconciled += account.balanceReconciled;
-	    } else if (account.typeAccount.toUpperCase() === 'ASSET') {
+	    } else if (account.accountType.toUpperCase() === 'ASSET') {
 		$scope.globalBalanceAssetReconciled += account.balanceReconciled;
 	    }
 	};
