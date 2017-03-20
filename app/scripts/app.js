@@ -30,6 +30,14 @@ angular.module('grisbiClientWebApp').config(function ($routeProvider) {
             templateUrl: 'views/account.html',
             controller : 'accountController'
         })
+        .when('/party', {
+            templateUrl: 'views/party.html',
+            controller : 'partyController'
+        })
+        .when('/category', {
+            templateUrl: 'views/category.html',
+            controller : 'partyController'
+        })
         .otherwise({
             redirectTo: '/synth'
         });

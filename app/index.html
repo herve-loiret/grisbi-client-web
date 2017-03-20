@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Grisbi Web</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="bower_components/ng-table/dist/ng-table.min.css" />
     <link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.css" />
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" type="image/png" href="grisbi.png">
   </head>
   <body ng-app="grisbiClientWebApp">
     <!--[if lte IE 8]>
@@ -44,6 +45,8 @@
     			            </li>
     					</ul>
     				</li>
+                    <li><a href="#/party">Tiers</a></li>
+                    <li><a href="#/category">Catégories</a></li>
     			</ul>
     		</div>
     	</div>
@@ -80,6 +83,8 @@
     <script type="text/javascript" src="scripts/controllers/accountController.js"></script>
     <script type="text/javascript" src="scripts/controllers/synthController.js"></script>
     <script type="text/javascript" src="scripts/controllers/headerController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/partyController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/categoryController.js"></script>
 
     <script type="text/javascript" src="scripts/filters/filters.js"></script>
 
